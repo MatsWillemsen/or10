@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-xs-10 maincontent">
+  <h2 class="text-center">Importeer</h2>
+  <form id="importform" action="/import" enctype="multipart/form-data" method="post" class="form-horizontal col-xs-4 col-xs-offset-4">
+    <div class="form-group">
+      <label for="dataFile">Bestand</label>
+      <input type="file" class="form-control" id="dataFile" placeholder="file" name="dataFile">
+      <p class="help-block">Kies hier het betreffende bestand</p>
+    </div>
+    <input type="submit" class="btn btn-default btn-block"></input>
+  </form>
+</div>
+
+{% endblock %}

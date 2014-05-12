@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="col-xs-10 maincontent">
+  <h2 class="text-center">Onderzoeksregistratie</h2>
+  <div class="researcher col-xs-12">
+    <h3>{{researcher.lastname}}</h3>
+    <h4>{{researcher.position}}</h4>
+    <h3>Clusters</h3>
+    {% for cluster in clusters %}
+      <div class="panel panel-default">
+        <div class="panel-heading">{{cluster.name}}</div>
+        <table class="table cluster" id="cluster{{cluster.id}}">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Groep</th>
+              <th>Aantal FTE</th>
+            </tr>
+          </thead>
+          <tbody>
+             {% for group in cluster.groups %}
+             <tr>
+               <td>{{group.groepsnummer}}</td>
+               <td>{{group.name}}</td>
+               <td contenteditable data-cluster="{{cluster.id}}" data-group="{{group.groepsnummer}}" data-researcher="{{researcher.id}}">0</td>
+             </tr>
+             {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+
+{% block customscripts %}
+<script data-main="/js/researcher" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.11/require.min.js"></script>
+{% endblock %}
