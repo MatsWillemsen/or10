@@ -15,3 +15,10 @@ require.config({
     }
   }
 });
+
+require(['jquery'], function($) {
+  $('button.submitbtn').click(function(event) {
+    alert('hey');
+    event.preventDefault();
+  });
+});

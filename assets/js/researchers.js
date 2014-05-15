@@ -7,7 +7,7 @@ require.config({
     'backgrid' : 'dependencies/backgrid.min',
     'backbone-pageable' : 'dependencies/backbone-pageable.min',
     'backgrid-paginator' : 'dependencies/backgrid-paginator.min',
-    'backgrid-filter' : 'backgrid-filter/backgrid-filter.min',
+    'backgrid-filter' : 'dependencies/backgrid-filter.min',
     'lunr' : 'dependencies/lunr.min'
   },
   shim : {
